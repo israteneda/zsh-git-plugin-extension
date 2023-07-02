@@ -1,0 +1,283 @@
+[
+  { "alias": "g", "command": "git" },
+  { "alias": "ga", "command": "git add" },
+  { "alias": "gaa", "command": "git add --all" },
+  { "alias": "gapa", "command": "git add --patch" },
+  { "alias": "gau", "command": "git add --update" },
+  { "alias": "gav", "command": "git add --verbose" },
+  { "alias": "gap", "command": "git apply" },
+  { "alias": "gapt", "command": "git apply --3way" },
+  { "alias": "gb", "command": "git branch" },
+  { "alias": "gba", "command": "git branch --all" },
+  { "alias": "gbd", "command": "git branch --delete" },
+  {
+    "alias": "gbda",
+    "command": "git branch --no-color --merged | grep -vE \"^([+]|\\s($(git_main_branch)|$(git_develop_branch))\\s*$)\" | xargs git branch --delete 2>/dev/null"
+  },
+  { "alias": "gbD", "command": "git branch --delete --force" },
+  { "alias": "gbg", "command": "git branch -vv" },
+  { "alias": "gbgd", "command": "local res=$(git branch -vv" },
+  { "alias": "gbgD", "command": "local res=$(git branch -vv" },
+  { "alias": "gbl", "command": "git blame -b -w" },
+  { "alias": "gbnm", "command": "git branch --no-merged" },
+  { "alias": "gbr", "command": "git branch --remote" },
+  { "alias": "gbs", "command": "git bisect" },
+  { "alias": "gbsb", "command": "git bisect bad" },
+  { "alias": "gbsg", "command": "git bisect good" },
+  { "alias": "gbsr", "command": "git bisect reset" },
+  { "alias": "gbss", "command": "git bisect start" },
+  { "alias": "gc", "command": "git commit --verbose" },
+  { "alias": "gc", "command": " git commit --verbose --amend" },
+  { "alias": "gcn", "command": " git commit --verbose --no-edit --amend" },
+  { "alias": "gca", "command": "git commit --verbose --all" },
+  { "alias": "gca", "command": " git commit --verbose --all --amend" },
+  {
+    "alias": "gcan",
+    "command": " git commit --verbose --all --no-edit --amend"
+  },
+  {
+    "alias": "gcans",
+    "command": " git commit --verbose --all --signoff --no-edit --amend"
+  },
+  { "alias": "gcam", "command": "git commit --all --message" },
+  { "alias": "gcas", "command": "git commit --all --signoff" },
+  { "alias": "gcasm", "command": "git commit --all --signoff --message" },
+  { "alias": "gcsm", "command": "git commit --signoff --message" },
+  { "alias": "gcb", "command": "git checkout -b" },
+  { "alias": "gcf", "command": "git config --list" },
+  { "alias": "gcl", "command": "git clone --recurse-submodules" },
+  {
+    "alias": "gccd",
+    "command": "git clone --recurse-submodules \"$@\" && cd \"$(basename $_ .git)\""
+  },
+  { "alias": "gclean", "command": "git clean --interactive -d" },
+  { "alias": "gpristine", "command": "git reset --hard && git clean -dffx" },
+  { "alias": "gcm", "command": "git checkout $(git_main_branch)" },
+  { "alias": "gcd", "command": "git checkout $(git_develop_branch)" },
+  { "alias": "gcmsg", "command": "git commit --message" },
+  { "alias": "gco", "command": "git checkout" },
+  { "alias": "gcor", "command": "git checkout --recurse-submodules" },
+  { "alias": "gcount", "command": "git shortlog --summary -n" },
+  { "alias": "gcp", "command": "git cherry-pick" },
+  { "alias": "gcpa", "command": "git cherry-pick --abort" },
+  { "alias": "gcpc", "command": "git cherry-pick --continue" },
+  { "alias": "gcs", "command": "git commit -S" },
+  { "alias": "gcss", "command": "git commit -S -s" },
+  { "alias": "gcssm", "command": "git commit -S -s -m" },
+  { "alias": "gd", "command": "git diff" },
+  { "alias": "gdca", "command": "git diff --cached" },
+  { "alias": "gdcw", "command": "git diff --cached --word-diff" },
+  {
+    "alias": "gdct",
+    "command": "git describe --tags $(git rev-list --tags --max-count=1)"
+  },
+  { "alias": "gds", "command": "git diff --staged" },
+  { "alias": "gdt", "command": "git diff-tree --no-commit-id --name-only -r" },
+  {
+    "alias": "gdnolock",
+    "command": "git diff $@ \":(exclude)package-lock.json\" \":(exclude)*.lock\""
+  },
+  { "alias": "gdup", "command": "git diff @{upstream}" },
+  { "alias": "gdv", "command": "git diff -w $@ | view -" },
+  { "alias": "gdw", "command": "git diff --word-diff" },
+  { "alias": "gf", "command": "git fetch" },
+  { "alias": "gfa", "command": "git fetch --all --prune" },
+  { "alias": "gfg", "command": "git ls-files | grep" },
+  { "alias": "gfo", "command": "git fetch origin" },
+  { "alias": "gg", "command": "git gui citool" },
+  { "alias": "gga", "command": "git gui citool --amend" },
+  { "alias": "ggf", "command": "git push --force origin $(current_branch)" },
+  {
+    "alias": "ggfl",
+    "command": "git push --force-with-lease origin $(current_branch)"
+  },
+  { "alias": "ggl", "command": "git pull origin $(current_branch)" },
+  { "alias": "ggp", "command": "git push origin $(current_branch)" },
+  { "alias": "ggpnp", "command": "ggl && ggp" },
+  { "alias": "ggpull", "command": "git pull origin \"$(git_current_branch)\"" },
+  { "alias": "ggpur", "command": "ggu" },
+  { "alias": "ggpush", "command": "git push origin \"$(git_current_branch)\"" },
+  {
+    "alias": "ggsup",
+    "command": "git branch --set-upstream-to=origin/$(git_current_branch)"
+  },
+  { "alias": "ggu", "command": "git pull --rebase origin $(current_branch)" },
+  {
+    "alias": "gpsup",
+    "command": "git push --set-upstream origin $(git_current_branch)"
+  },
+  {
+    "alias": "gpsupf",
+    "command": "git push --set-upstream origin $(git_current_branch) --force-with-lease --force-if-includes (git version >= 2.30)"
+  },
+  {
+    "alias": "gpsupf",
+    "command": "git push --set-upstream origin $(git_current_branch) --force-with-lease (git version < 2.30)"
+  },
+  { "alias": "ghh", "command": "git help" },
+  { "alias": "gignore", "command": "git update-index --assume-unchanged" },
+  { "alias": "gignored", "command": "git ls-files -v | grep \"^[[:lower:]]\"" },
+  {
+    "alias": "git",
+    "command": "vn-dcommit-push: git svn dcommit && git push github $(git_main_branch):svntrunk"
+  },
+  { "alias": "gk", "command": "gitk --all --branches &!" },
+  {
+    "alias": "gke",
+    "command": "gitk --all $(git log --walk-reflogs --pretty=%h) &!"
+  },
+  { "alias": "gl", "command": "git pull" },
+  { "alias": "glg", "command": "git log --stat" },
+  { "alias": "glgp", "command": "git log --stat --patch" },
+  { "alias": "glgg", "command": "git log --graph" },
+  { "alias": "glgga", "command": "git log --graph --decorate --all" },
+  { "alias": "glgm", "command": "git log --graph --max-count=10" },
+  { "alias": "glo", "command": "git log --oneline --decorate" },
+  {
+    "alias": "glol",
+    "command": "git log --graph --pretty='%Cred%h%Creset -%C(auto)%d%Creset %s %Cgreen(%ar) %C(bold blue)<%an>%Creset'"
+  },
+  {
+    "alias": "glols",
+    "command": "git log --graph --pretty='%Cred%h%Creset -%C(auto)%d%Creset %s %Cgreen(%ar) %C(bold blue)<%an>%Creset' --stat"
+  },
+  {
+    "alias": "glod",
+    "command": "git log --graph --pretty='%Cred%h%Creset -%C(auto)%d%Creset %s %Cgreen(%ad) %C(bold blue)<%an>%Creset'"
+  },
+  {
+    "alias": "glods",
+    "command": "git log --graph --pretty='%Cred%h%Creset -%C(auto)%d%Creset %s %Cgreen(%ad) %C(bold blue)<%an>%Creset' --date=short"
+  },
+  {
+    "alias": "glola",
+    "command": "git log --graph --pretty='%Cred%h%Creset -%C(auto)%d%Creset %s %Cgreen(%ar) %C(bold blue)<%an>%Creset' --all"
+  },
+  { "alias": "glog", "command": "git log --oneline --decorate --graph" },
+  { "alias": "gloga", "command": "git log --oneline --decorate --graph --all" },
+  { "alias": "glp", "command": "git log --pretty=<format>" },
+  { "alias": "gm", "command": "git merge" },
+  { "alias": "gms", "command": "git merge --squash" },
+  { "alias": "gmom", "command": "git merge origin/$(git_main_branch)" },
+  { "alias": "gmtl", "command": "git mergetool --no-prompt" },
+  { "alias": "gmtlvim", "command": "git mergetool --no-prompt --tool=vimdiff" },
+  { "alias": "gmum", "command": "git merge upstream/$(git_main_branch)" },
+  { "alias": "gma", "command": "git merge --abort" },
+  { "alias": "gp", "command": "git push" },
+  { "alias": "gpd", "command": "git push --dry-run" },
+  {
+    "alias": "gpf",
+    "command": "git push --force-with-lease --force-if-includes (git version >= 2.30)"
+  },
+  {
+    "alias": "gpf",
+    "command": "git push --force-with-lease (git version < 2.30)"
+  },
+  { "alias": "gpf", "command": " git push --force" },
+  {
+    "alias": "gpoat",
+    "command": "git push origin --all && git push origin --tags"
+  },
+  { "alias": "gpod", "command": "git push origin --delete" },
+  { "alias": "gpr", "command": "git pull --rebase" },
+  { "alias": "gpu", "command": "git push upstream" },
+  { "alias": "gpv", "command": "git push --verbose" },
+  { "alias": "gr", "command": "git remote" },
+  { "alias": "gra", "command": "git remote add" },
+  { "alias": "grb", "command": "git rebase" },
+  { "alias": "grba", "command": "git rebase --abort" },
+  { "alias": "grbc", "command": "git rebase --continue" },
+  { "alias": "grbd", "command": "git rebase $(git_develop_branch)" },
+  { "alias": "grbi", "command": "git rebase --interactive" },
+  { "alias": "grbm", "command": "git rebase $(git_main_branch)" },
+  { "alias": "grbom", "command": "git rebase origin/$(git_main_branch)" },
+  { "alias": "grbo", "command": "git rebase --onto" },
+  { "alias": "grbs", "command": "git rebase --skip" },
+  { "alias": "grev", "command": "git revert" },
+  { "alias": "grh", "command": "git reset" },
+  { "alias": "grhh", "command": "git reset --hard" },
+  {
+    "alias": "groh",
+    "command": "git reset origin/$(git_current_branch) --hard"
+  },
+  { "alias": "grm", "command": "git rm" },
+  { "alias": "grmc", "command": "git rm --cached" },
+  { "alias": "grmv", "command": "git remote rename" },
+  { "alias": "grrm", "command": "git remote remove" },
+  { "alias": "grs", "command": "git restore" },
+  { "alias": "grset", "command": "git remote set-url" },
+  { "alias": "grss", "command": "git restore --source" },
+  { "alias": "grst", "command": "git restore --staged" },
+  {
+    "alias": "grt",
+    "command": "cd \"$(git rev-parse --show-toplevel || echo .)\""
+  },
+  { "alias": "gru", "command": "git reset --" },
+  { "alias": "grup", "command": "git remote update" },
+  { "alias": "grv", "command": "git remote --verbose" },
+  { "alias": "gsb", "command": "git status --short -b" },
+  { "alias": "gsd", "command": "git svn dcommit" },
+  { "alias": "gsh", "command": "git show" },
+  { "alias": "gsi", "command": "git submodule init" },
+  { "alias": "gsps", "command": "git show --pretty=short --show-signature" },
+  { "alias": "gsr", "command": "git svn rebase" },
+  { "alias": "gss", "command": "git status --short" },
+  { "alias": "gst", "command": "git status" },
+  { "alias": "gsta", "command": "git stash push (git version >= 2.13)" },
+  { "alias": "gsta", "command": "git stash save (git version < 2.13)" },
+  { "alias": "gstaa", "command": "git stash apply" },
+  { "alias": "gstc", "command": "git stash clear" },
+  { "alias": "gstd", "command": "git stash drop" },
+  { "alias": "gstl", "command": "git stash list" },
+  { "alias": "gstp", "command": "git stash pop" },
+  { "alias": "gsts", "command": "git stash show --text" },
+  { "alias": "gstu", "command": "git stash --include-untracked" },
+  { "alias": "gstall", "command": "git stash --all" },
+  { "alias": "gsu", "command": "git submodule update" },
+  { "alias": "gsw", "command": "git switch" },
+  { "alias": "gswc", "command": "git switch -c" },
+  { "alias": "gswm", "command": "git switch $(git_main_branch)" },
+  { "alias": "gswd", "command": "git switch $(git_develop_branch)" },
+  { "alias": "gts", "command": "git tag -s" },
+  { "alias": "gtv", "command": "git tag | sort -V" },
+  {
+    "alias": "gtl",
+    "command": "gtl(){ git tag --sort=-v:refname -n --list ${1}* }; noglob gtl"
+  },
+  { "alias": "gunignore", "command": "git update-index --no-assume-unchanged" },
+  {
+    "alias": "gunwip",
+    "command": "git rev-list --max-count=1 --format=\"%s\" HEAD | grep -q \"--wip--\" && git reset HEAD~1"
+  },
+  { "alias": "gup", "command": "git pull --rebase" },
+  { "alias": "gupv", "command": "git pull --rebase --verbose" },
+  { "alias": "gupa", "command": "git pull --rebase --autostash" },
+  { "alias": "gupav", "command": "git pull --rebase --autostash --verbose" },
+  {
+    "alias": "gupom",
+    "command": "git pull --rebase origin $(git_main_branch)"
+  },
+  {
+    "alias": "gupomi",
+    "command": "git pull --rebase=interactive origin $(git_main_branch)"
+  },
+  { "alias": "glum", "command": "git pull upstream $(git_main_branch)" },
+  { "alias": "gluc", "command": "git pull upstream $(git_current_branch)" },
+  {
+    "alias": "gwch",
+    "command": "git whatchanged -p --abbrev-commit --pretty=medium"
+  },
+  {
+    "alias": "gwip",
+    "command": "git add -A; git rm $(git ls-files --deleted) 2> /dev/null; git commit --no-verify --no-gpg-sign --message \"--wip-- [skip ci]\""
+  },
+  { "alias": "gam", "command": "git am" },
+  { "alias": "gamc", "command": "git am --continue" },
+  { "alias": "gams", "command": "git am --skip" },
+  { "alias": "gama", "command": "git am --abort" },
+  { "alias": "gamscp", "command": "git am --show-current-patch" },
+  { "alias": "gwt", "command": "git worktree" },
+  { "alias": "gwtls", "command": "git worktree list" },
+  { "alias": "gwtmv", "command": "git worktree move" },
+  { "alias": "gwtrm", "command": "git worktree remove" }
+]
